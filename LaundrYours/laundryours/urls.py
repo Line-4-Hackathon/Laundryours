@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
     path('accounts/', include('accounts.urls')),
-    path('', fiberResult, name="fiberResult"),
+    path('search/', fiberResult, name="fiberResult"),
 ]
