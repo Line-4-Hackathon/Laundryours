@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import vueTest.views
+import accounts.views
+import search.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('vueTest.urls'))
+    path('', search.views.home, name="home"),
+    path('accounts/', include('accounts.urls')),
 ]
