@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'search',
     'CRUD',
+    'mapAPI',
 ]
 
 MIDDLEWARE = [

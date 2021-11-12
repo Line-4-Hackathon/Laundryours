@@ -18,10 +18,12 @@ from django.urls import path, include
 import accounts.views
 import search.views
 import CRUD.views
+import mapAPI.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', search.views.home, name="home"),
+    path('search/', search.views.fiberResult, name="result"),
     path('accounts/', include('accounts.urls')),
     path('CRUD/<int:post_id>', CRUD.views.show, name='show'),
     path('CRUD/new', CRUD.views.new, name='new'),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('postupdate/<int:post_id>',CRUD.views.postupdate, name='postupdate'),
     path('like/<int:post_id>',CRUD.views.like, name='like'),
     path('delete/<int:post_id>',CRUD.views.delete,name='delete'),
+    path('mapAPI/laundry', mapAPI.views.showMap, name='laundry'),
 ]
