@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from LaundryYoursApp.views import main,createPage,create,detail,updatePage,update,delete
+from mapAPI.views import showMap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('updatePage/<id>',updatePage,name='updatePage'),
     path('update/<id>',update,name='update'),
     path('delete/<id>',delete,name='delete'),
+    path('showMap',showMap,name='showMap'),
 ]
