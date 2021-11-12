@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 import accounts.views
 import search.views
+import CRUD.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', search.views.home, name="home"),
     path('accounts/', include('accounts.urls')),
+    path('CRUD/<int:post_id>', CRUD.views.show, name='show'),
+    path('CRUD/new', CRUD.views.new, name='new'),
+    path('CRUD/edit',CRUD.views.edit, name ="edit"),
+    path('CRUD/postList', CRUD.views.postList, name='postList'),
+    path('postupdate/<int:post_id>',CRUD.views.postupdate, name='postupdate'),
+    path('like/<int:post_id>',CRUD.views.like, name='like'),
+    path('delete/<int:post_id>',CRUD.views.delete,name='delete'),
 ]

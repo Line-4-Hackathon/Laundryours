@@ -1,0 +1,17 @@
+<style>
+    #forms {margin-left:30%; margin-right:30%;}
+</style>
+<br>
+<h2 style="text-align: center;">수정하기</h2>
+<br>
+<form id="forms" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    <table style="margin-left: auto; margin-right: auto; ">
+        제목 {{form.title}}<br>
+        내용 {{form.content}}<br>
+    </table>
+    <br>
+    <div text-align="center">
+    <input type="submit" value="수정">
+    </div>
+</form>
