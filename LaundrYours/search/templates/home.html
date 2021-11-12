@@ -7,9 +7,10 @@
 <a href="{% url 'signup' %}">signup</a>
 {% endif %}
 
-<form method="GET" action="{% url 'fiberResult' ">
+<form method="GET" action="{% url 'fiberResult' %} ">
+    {% csrf_token %}
     <p>
-        <input type="text" name="query" maxlength="20" default=''/>
+        <input type="search" name="query" maxlength="20" default=''/>
     </p>
     <input type="submit" target="_self" value="검색">
 </form>

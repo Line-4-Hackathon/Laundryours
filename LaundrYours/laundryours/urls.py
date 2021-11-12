@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import accounts.views
-import search.views
+from search.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', search.views.home, name="home"),
+    path('', home, name="home"),
     path('accounts/', include('accounts.urls')),
-    path('search/', search.views.fiberResult, name="fiberResult"),
+    path('search/', fiberResult, name="fiberResult"),
 ]
