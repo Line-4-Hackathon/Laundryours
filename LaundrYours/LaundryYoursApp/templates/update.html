@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'update' id %}" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>제목 : <input type="text" name="title" value="{{title}}"></p>
+        <p>작성자 : <input type="text" name="writer" value="{{writer}}"></p>
+        <p>본문 : <textarea name="body">{{body}}</textarea></p>
+        {% comment %} <p>사진 : <input type="file" name="image"><br></br><img src="{{image.url}}" height=300><br></br></p> {% endcomment %}
+        <button type="submit">작성</button>
+    </form>
+</body>
+</html>
