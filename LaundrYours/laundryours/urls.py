@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from LaundryYoursApp.views import main,createPage,create,detail,updatePage,update,delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('main/',main,name='main'),
+    path('create/',create,name='create'),
+    path('createPage/',createPage,name='createPage'),
+    path('detail/<id>',detail,name='detail'),
+    path('updatePage/<id>',updatePage,name='updatePage'),
+    path('update/<id>',update,name='update'),
+    path('delete/<id>',delete,name='delete'),
 ]
