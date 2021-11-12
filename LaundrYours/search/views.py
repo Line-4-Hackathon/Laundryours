@@ -7,7 +7,7 @@ def home(request):
 
 def fiberResult(request):
     fiber_object = Fiber.objects.all()
-    query = request.GET.get('query','')
-    if query : 
-        fiber_object = fiber_object.filter(name__icontains= query)
+    # query = request.GET.get('query','')
+    # if query : 
+    #     fiber_object = fiber_object.filter(name__icontains= query)
     return render(request, 'result.html', {'fiber':fiber_object})
